@@ -17,6 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "PostgreSqlV2Source",
+						"query": "select * from PUBLIC.hospitals",
 						"queryTimeout": "02:00:00"
 					},
 					"sink": {
@@ -46,7 +47,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Dataset_adls_parq",
+						"referenceName": "adls_parq",
 						"type": "DatasetReference",
 						"parameters": {
 							"container": "landing",
