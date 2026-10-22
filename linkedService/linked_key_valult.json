@@ -1,0 +1,10 @@
+{
+	"name": "linked_key_valult",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://prajs-pharma-key.vault.azure.net/"
+		}
+	}
+}
