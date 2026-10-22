@@ -1,0 +1,10 @@
+{
+	"name": "Linked_adls_storage",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://pharmastorageprajs11.dfs.core.windows.net/"
+		}
+	}
+}
