@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Read table details from main pl",
+				"name": "Rdng tble detils frm main ppl set var",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -32,7 +32,7 @@
 				}
 			},
 			{
-				"name": "Set variable1",
+				"name": "Set start time  timestamap for folder",
 				"type": "SetVariable",
 				"dependsOn": [],
 				"policy": {
@@ -49,17 +49,17 @@
 				}
 			},
 			{
-				"name": "source to landing ingestion",
+				"name": "src postgr to adls landing",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Read table details from main pl",
+						"activity": "Rdng tble detils frm main ppl set var",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					},
 					{
-						"activity": "Set variable1",
+						"activity": "Set start time  timestamap for folder",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -77,7 +77,7 @@
 					"source": {
 						"type": "PostgreSqlV2Source",
 						"query": {
-							"value": "select * from PUBLIC.@{activity('Read table details from main pl').output.firstRow.source_table_name}",
+							"value": "select * from PUBLIC.@{activity('Rdng tble detils frm main ppl set var').output.firstRow.source_table_name}",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00"
@@ -114,7 +114,7 @@
 						"parameters": {
 							"container": "landing",
 							"folder": {
-								"value": "@concat(\n    activity('Read table details from main pl').output.firstRow.source_system,\n    '/',\n    activity('Read table details from main pl').output.firstRow.source_table_name,\n    '/',\n    variables('start_time')\n\n)",
+								"value": "@concat(\nactivity('Rdng tble detils frm main ppl set var').output.firstRow.source_system,\n'/',\nactivity('Rdng tble detils frm main ppl set var').output.firstRow.source_table_name,\n'/',\nvariables('start_time') \n)",
 								"type": "Expression"
 							}
 						}
