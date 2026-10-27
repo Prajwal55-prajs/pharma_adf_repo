@@ -1,10 +1,6 @@
 {
 	"name": "adls_parq",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "Linked_adls_storage",
-			"type": "LinkedServiceReference"
-		},
 		"parameters": {
 			"container": {
 				"type": "string"
