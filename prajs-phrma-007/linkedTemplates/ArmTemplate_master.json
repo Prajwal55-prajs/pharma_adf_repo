@@ -1,0 +1,140 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "prajs-phrma-007"
+		},
+		"RestService1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'RestService1'"
+		},
+		"linked_databrock_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'linked_databrock'"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://linkedsqlkeyvalult.vault.azure.net/"
+		},
+		"Linked_adls_storage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pharmastorageprajs11.dfs.core.windows.net/"
+		},
+		"Linkedazuresql_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "prajs-server.database.windows.net"
+		},
+		"Linkedazuresql_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "prajs-sql-database"
+		},
+		"Linkedazuresql_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "prajwalprajs"
+		},
+		"PostgreSql1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "ep-cool-butterfly-a14cbizw-pooler.ap-southeast-1.aws.neon.tech"
+		},
+		"PostgreSql1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "neondb"
+		},
+		"PostgreSql1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "neondb_owner"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "www.google.com"
+		},
+		"RestService1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "prajwla"
+		},
+		"linked_databrock_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "1022-140849-l115wazf"
+		},
+		"linked_key_valult_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://prajs-pharma-key.vault.azure.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "prajs-phrma-007_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"RestService1_password": {
+						"value": "[parameters('RestService1_password')]"
+					},
+					"linked_databrock_accessToken": {
+						"value": "[parameters('linked_databrock_accessToken')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"Linked_adls_storage_properties_typeProperties_url": {
+						"value": "[parameters('Linked_adls_storage_properties_typeProperties_url')]"
+					},
+					"RestService1_properties_typeProperties_url": {
+						"value": "[parameters('RestService1_properties_typeProperties_url')]"
+					},
+					"RestService1_properties_typeProperties_userName": {
+						"value": "[parameters('RestService1_properties_typeProperties_userName')]"
+					},
+					"linked_databrock_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('linked_databrock_properties_typeProperties_existingClusterId')]"
+					},
+					"linked_key_valult_properties_typeProperties_baseUrl": {
+						"value": "[parameters('linked_key_valult_properties_typeProperties_baseUrl')]"
+					},
+					"Linkedazuresql_properties_typeProperties_server": {
+						"value": "[parameters('Linkedazuresql_properties_typeProperties_server')]"
+					},
+					"Linkedazuresql_properties_typeProperties_database": {
+						"value": "[parameters('Linkedazuresql_properties_typeProperties_database')]"
+					},
+					"Linkedazuresql_properties_typeProperties_userName": {
+						"value": "[parameters('Linkedazuresql_properties_typeProperties_userName')]"
+					},
+					"PostgreSql1_properties_typeProperties_server": {
+						"value": "[parameters('PostgreSql1_properties_typeProperties_server')]"
+					},
+					"PostgreSql1_properties_typeProperties_database": {
+						"value": "[parameters('PostgreSql1_properties_typeProperties_database')]"
+					},
+					"PostgreSql1_properties_typeProperties_username": {
+						"value": "[parameters('PostgreSql1_properties_typeProperties_username')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

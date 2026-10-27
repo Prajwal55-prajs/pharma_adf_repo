@@ -1,0 +1,57 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "prajs-phrma-007"
+		},
+		"RestService1_password": {
+			"value": ""
+		},
+		"linked_databrock_accessToken": {
+			"value": ""
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://linkedsqlkeyvalult.vault.azure.net/"
+		},
+		"Linked_adls_storage_properties_typeProperties_url": {
+			"value": "https://pharmastorageprajs11.dfs.core.windows.net/"
+		},
+		"Linkedazuresql_properties_typeProperties_server": {
+			"value": "prajs-server.database.windows.net"
+		},
+		"Linkedazuresql_properties_typeProperties_database": {
+			"value": "prajs-sql-database"
+		},
+		"Linkedazuresql_properties_typeProperties_userName": {
+			"value": "prajwalprajs"
+		},
+		"PostgreSql1_properties_typeProperties_server": {
+			"value": "ep-cool-butterfly-a14cbizw-pooler.ap-southeast-1.aws.neon.tech"
+		},
+		"PostgreSql1_properties_typeProperties_database": {
+			"value": "neondb"
+		},
+		"PostgreSql1_properties_typeProperties_username": {
+			"value": "neondb_owner"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"value": "www.google.com"
+		},
+		"RestService1_properties_typeProperties_userName": {
+			"value": "prajwla"
+		},
+		"linked_databrock_properties_typeProperties_existingClusterId": {
+			"value": "1022-140849-l115wazf"
+		},
+		"linked_key_valult_properties_typeProperties_baseUrl": {
+			"value": "https://prajs-pharma-key.vault.azure.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
